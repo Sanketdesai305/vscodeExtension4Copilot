@@ -42,4 +42,5 @@ GitHub Copilot Chat installed (for slash commands)
 🛠 Built By
 Sanket Desai
 Software Engineer @ Canarys Automation
-🚀 View More on GitHub : sanketdesai305
+🚀 View More on GitHub : [sanketdesai305](https://github.com/Sanketdesai305/myMCP)
+Download Link : https://marketplace.visualstudio.com/items?itemName=sanketdesai.sanket-mcp-vscode
