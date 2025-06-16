@@ -1,0 +1,10 @@
+{
+  "slashCommands": [
+    {
+      "name": "create_pipeline",
+      "description": "Creates a new Azure DevOps pipeline.",
+      "parameters": [],
+      "command": "Azure DevOps: Create Pipeline"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "name": "sanket-mcp-vscode",
+  "displayName": "sanket-mcp-vscode",
+  "publisher": "sanketdesai",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+  "onCommand:sanketMcp.create_pipeline"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "sanketMcp.create_pipeline",
+        "title": "Azure DevOps: Create Pipeline",
+        "category": "Azure DevOps"
+      }
+    ],
+    "copilotChat": {
+      "slashCommands": [
+        {
+          "command": "create_pipeline",
+          "title": "Create Azure Pipeline",
+          "description": "Creates a pipeline in Azure DevOps via MCP server"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Azure DevOps MCP",
+      "properties": {
+        "azureDevOps.command": {
+          "type": "string",
+          "default": "npx",
+          "description": "Command to run the MCP server"
+        },
+        "azureDevOps.args": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "-y",
+            "@sanketdesaiecanarys/sankets-mcp-server"
+          ],
+          "description": "Arguments for MCP server"
+        },
+        "azureDevOps.env": {
+          "type": "object",
+          "description": "Environment variables to pass to the MCP server"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.100.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.25.1",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@sanketdesaiecanarys/sankets-mcp-server": "^1.0.15",
+    "vscode-languageclient": "^9.0.1"
+  }
+}
